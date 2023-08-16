@@ -10,6 +10,8 @@ public class InputReceiver : MonoBehaviour, Controls.IPlayerActions
 
     public event Action JumpEvent;
     public event Action DodgeEvent;
+    public event Action TargetEvent;
+    public event Action CancelTargetEvent;
 
     private Controls controls;
 
@@ -50,6 +52,18 @@ public class InputReceiver : MonoBehaviour, Controls.IPlayerActions
         // Remember to leave empty for now.
         // Cinemachine component is using this automatically. 
         
+    }
+
+    public void OnTarget(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+        TargetEvent?.Invoke();
+    }
+
+    public void OnCancel(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+        CancelTargetEvent?.Invoke();
     }
 }
 
