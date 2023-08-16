@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class PlayerTargetingState : PlayerBaseState
 
     public override void Enter()
     {
-
+        stateMachine.InputReceiver.CancelTargetEvent += OnCancel;
     }
 
     public override void Tick(float deltaTime)
@@ -19,8 +20,11 @@ public class PlayerTargetingState : PlayerBaseState
 
     public override void Exit()
     {
-        
+        stateMachine.InputReceiver.CancelTargetEvent -= OnCancel;
     }
 
-  
+    private void OnCancel()
+    {
+        stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+    }
 }

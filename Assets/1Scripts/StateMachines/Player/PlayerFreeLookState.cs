@@ -12,7 +12,7 @@ public class PlayerFreeLookState : PlayerBaseState
 
     public override void Enter()
     {
-
+        stateMachine.InputReceiver.TargetEvent += OnTarget;
     }
 
     public override void Tick(float deltaTime)
@@ -40,7 +40,8 @@ public class PlayerFreeLookState : PlayerBaseState
 
     public override void Exit()
     {
-      
+        stateMachine.InputReceiver.TargetEvent -= OnTarget;
+
 
     }
 
@@ -75,6 +76,11 @@ public class PlayerFreeLookState : PlayerBaseState
             deltaTime * stateMachine.RotationSmoothingValue);
     
            
+    }
+
+    private void OnTarget()
+    {
+        stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
     }
 
 }
