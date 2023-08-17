@@ -33,7 +33,7 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
         FaceMovementDirection(movement, deltaTime);
 
-        Debug.Log(stateMachine.InputReceiver.MovementValue);
+       // Debug.Log(stateMachine.InputReceiver.MovementValue);
 
     }
 
@@ -80,7 +80,16 @@ public class PlayerFreeLookState : PlayerBaseState
 
     private void OnTarget()
     {
+        #region Comments
+        // We check if there is a target return if there is no target selected
+        // If there is a target in range we enter the PlayerTargeting State
+        #endregion
+
+        if (!stateMachine.Targeter.SelectTarget()) { return; } 
+
         stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
     }
+
+
 
 }
