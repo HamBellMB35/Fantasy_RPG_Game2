@@ -49,8 +49,8 @@ MonoBehaviour:
   m_UpdateMethod: 2
   m_Targets:
   - target: {fileID: 6968443717775497256}
-    weight: 1
-    radius: 0
+    weight: 0.25
+    radius: 2
 --- !u!1 &2222094922970082153
 GameObject:
   m_ObjectHideFlags: 0
