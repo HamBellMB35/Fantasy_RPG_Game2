@@ -476,7 +476,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5572050382630378778}
-  m_LocalRotation: {x: 0.015701607, y: -0.76028347, z: 0.018389948, w: 0.6491413}
+  m_LocalRotation: {x: 0.015352069, y: -0.77251357, z: 0.018690277, w: 0.63453746}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -564,7 +564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5572050382940179431}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.883448, y: 17.729189, z: -38.849155}
+  m_LocalPosition: {x: 25.84276, y: 17.729189, z: -38.62427}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -915,7 +915,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5572050384045219444}
-  m_LocalRotation: {x: 0.03927127, y: -0.75911367, z: 0.045995068, w: 0.6481426}
+  m_LocalRotation: {x: 0.03839149, y: -0.7713248, z: 0.046739466, w: 0.6335611}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1000,7 +1000,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5572050384282869527}
-  m_LocalRotation: {x: 0.015701607, y: -0.76028347, z: 0.018389948, w: 0.6491413}
+  m_LocalRotation: {x: 0.015352069, y: -0.77251357, z: 0.018690277, w: 0.63453746}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1540,12 +1540,8 @@ PrefabInstance:
       value: -49.700737
       objectReference: {fileID: 0}
     - target: {fileID: 4574238545256694067, guid: b03823328ad340b4fb41f2977a6798d4, type: 3}
-      propertyPath: <FreeLookMovementSpeed>k__BackingField
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4574238545256694067, guid: b03823328ad340b4fb41f2977a6798d4, type: 3}
-      propertyPath: <RotationSmoothingValue>k__BackingField
-      value: 9
+      propertyPath: <TargetingMovementSpeed>k__BackingField
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4610801593916103641, guid: b03823328ad340b4fb41f2977a6798d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Xml.Linq;
 using UnityEngine;
 
 public abstract class PlayerBaseState : State
@@ -19,4 +21,20 @@ public abstract class PlayerBaseState : State
         stateMachine.Controller.Move((motion + stateMachine.ForceReceiver.Movement) * deltaTime);
     }
 
+    protected void FaceTarget()
+    {
+        if (stateMachine.Targeter.CurrentTarget == null) { return; }
+
+        #region Comments
+        // After making sure we have a target, we get a Vector3 that will give us
+        // the vector pointing from the player to the target, and then we cero out the y value
+        #endregion
+
+        Vector3 lookAtPos = stateMachine.Targeter.CurrentTarget.transform.position - stateMachine.transform.position;
+
+        lookAtPos.y = 0f;
+
+        stateMachine.transform.rotation = Quaternion.LookRotation(lookAtPos);
+
+    }
 }
