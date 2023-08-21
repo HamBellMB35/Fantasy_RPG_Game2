@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerTargetingState : PlayerBaseState
 {
     private readonly int TargetingBlendTreeHash = Animator.StringToHash("TargetingBlendTree");
+    private readonly int TargetingForwardHash = Animator.StringToHash("TargetingForwardSpeed");
+    private readonly int TargetingRightHash = Animator.StringToHash("TargetingRightSpeed");
 
     public PlayerTargetingState(PlayerStateMachine stateMachine) : base(stateMachine) { }
   
@@ -29,9 +32,38 @@ public class PlayerTargetingState : PlayerBaseState
 
         Move( movement * stateMachine.TargetingMovementSpeed, deltaTime );
 
+        UdapteAnimator(deltaTime);
+
         FaceTarget();
 
     }
+
+    private void UdapteAnimator(float deltaTime)
+    {
+        if(stateMachine.InputReceiver.MovementValue.y == 0)
+        {
+            stateMachine.Animator.SetFloat(TargetingForwardHash, 0, 0.1f, deltaTime);
+        }
+
+        else
+        {
+            float value = stateMachine.InputReceiver.MovementValue.y > 0 ? 1f : -1f;
+            stateMachine.Animator.SetFloat(TargetingForwardHash, value, 0.1f, deltaTime);
+
+        }
+
+        if (stateMachine.InputReceiver.MovementValue.x == 0)
+        {
+            stateMachine.Animator.SetFloat(TargetingRightHash, 0, 0.1f, deltaTime) ;
+        }
+
+        else
+        {
+            float value = stateMachine.InputReceiver.MovementValue.x > 0 ? 1f : -1f;
+            stateMachine.Animator.SetFloat(TargetingRightHash, value, 0.1f, deltaTime);
+
+        }
+    } 
 
     public override void Exit()
     {
