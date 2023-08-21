@@ -22,9 +22,9 @@ public class PlayerFreeLookState : PlayerBaseState
     {
         Vector3 movement = CalculateEntityMovement();
 
+        Move(movement * stateMachine.FreeLookMovementSpeed, deltaTime);
 
-
-        stateMachine.Controller.Move(movement * stateMachine.FreeLookMovementSpeed * deltaTime);
+        
 
         if (stateMachine.InputReceiver.MovementValue == Vector2.zero)
         {
