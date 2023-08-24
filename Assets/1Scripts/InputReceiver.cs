@@ -8,6 +8,8 @@ public class InputReceiver : MonoBehaviour, Controls.IPlayerActions
 {
     public Vector2 MovementValue { get; private set; }
 
+    public bool IsAttacking { get; private set; }
+
     public event Action JumpEvent;
     public event Action DodgeEvent;
     public event Action TargetEvent;
@@ -64,6 +66,14 @@ public class InputReceiver : MonoBehaviour, Controls.IPlayerActions
     {
         if (!context.performed) { return; }
         CancelTargetEvent?.Invoke();
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if(context.performed) { IsAttacking = true; }               // May need to add more codition for magic
+                                                                    // or melee attacks here
+
+        else if(context.canceled) { IsAttacking = false; } 
     }
 }
 
