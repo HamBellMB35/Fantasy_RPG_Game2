@@ -1425,6 +1425,10 @@ MonoBehaviour:
   <FreeLookMovementSpeed>k__BackingField: 6
   <TargetingMovementSpeed>k__BackingField: 5
   <RotationSmoothingValue>k__BackingField: 9
+  <Attacks>k__BackingField:
+  - <AnimationName>k__BackingField: MeleeAttack1
+  - <AnimationName>k__BackingField: MeleeAttack2
+  - <AnimationName>k__BackingField: MeleeAttack3
 --- !u!114 &3496178535193008413
 MonoBehaviour:
   m_ObjectHideFlags: 0
