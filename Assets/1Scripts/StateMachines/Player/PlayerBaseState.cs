@@ -21,6 +21,16 @@ public abstract class PlayerBaseState : State
         stateMachine.Controller.Move((motion + stateMachine.ForceReceiver.Movement) * deltaTime);
     }
 
+    protected void Move( float deltaTime)
+    {
+        #region Comments
+        // This verstion of the move method gets used if we have any states but we dont have any inputs, blocking, or if the player gets hit and still needs to get knockedback, have gravity.
+        #endregion
+
+        Move(Vector3.zero, deltaTime); 
+    }
+
+
     protected void FaceTarget()
     {
         if (stateMachine.Targeter.CurrentTarget == null) { return; }
