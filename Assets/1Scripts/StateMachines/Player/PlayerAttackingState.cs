@@ -6,18 +6,29 @@ using UnityEngine;
 public class PlayerAttackingState : PlayerBaseState
 {
     private AttackData attack;
-
+    
     private bool appliedForceAlaready;
+
+   
+
+
+   
+
 
     private float previousFrameTime;
     public PlayerAttackingState(PlayerStateMachine stateMachine, int attackIndex) : base(stateMachine)
     {
         attack = stateMachine.Attacks[attackIndex];
+        // **************** THIS IS JUST TEMPORARY
+        // MUST PLACE IN CORRECT SPOT ALTHOUGH WORKING WELL FOR NOW///
+        RandomizeAttacks(stateMachine.Attacks);
     }
 
     public override void Enter()
     {
         stateMachine.Animator.CrossFadeInFixedTime(attack.AnimationName, attack.TransitionDuration);
+
+       
     }
 
     public override void Tick(float deltaTime)
@@ -40,11 +51,14 @@ public class PlayerAttackingState : PlayerBaseState
             if(stateMachine.InputReceiver.IsAttacking)              // Check if the player is still attacking
             {
                 TryComboAttack(normalizedTime);
+
             }
+
         }
 
         else
         {
+            Debug.Log("were back to locomorion");
             // go back to locomotion
         }
 
@@ -61,11 +75,13 @@ public class PlayerAttackingState : PlayerBaseState
 
     private void TryComboAttack(float normalizedTime)
     {
-        if(attack.ComboStateIndex == -1) { return; }        // If we cant combo retun
+        if (attack.ComboStateIndex == -1) { return; }        // If we cant combo retun
 
-        if(normalizedTime < attack.ComboAttackTime) { return; }     //  If we're not ready to combo attack return
+        if (normalizedTime < attack.ComboAttackTime) { return; }     //  If we're not ready to combo attack return
 
         stateMachine.SwitchState(new PlayerAttackingState(stateMachine, attack.ComboStateIndex));
+
+        
     }
 
     private void TryApplyForce()
@@ -105,6 +121,11 @@ public class PlayerAttackingState : PlayerBaseState
         {
             return 0f;
         } 
+
     }
+
+
+  
+
 
 }

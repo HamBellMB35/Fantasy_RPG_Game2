@@ -73,7 +73,9 @@ public class InputReceiver : MonoBehaviour, Controls.IPlayerActions
         if(context.performed) { IsAttacking = true; }               // May need to add more codition for magic
                                                                     // or melee attacks here
 
-        else if(context.canceled) { IsAttacking = false; } 
+        else if(context.canceled) { IsAttacking = false; }
+
+        
     }
 }
 

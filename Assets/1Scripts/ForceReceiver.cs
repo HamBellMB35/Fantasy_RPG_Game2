@@ -24,13 +24,11 @@ public class ForceReceiver : MonoBehaviour
     {
         if( verticalVelocity < 0f && controller.isGrounded)
         {
-            Debug.Log("PLayer is grounded");
             verticalVelocity = Physics.gravity.y * Time.deltaTime;
         }
 
         else
         {
-            Debug.Log("PLayer is not grounded , adding grav");
             verticalVelocity += Physics.gravity.y * Time.deltaTime;
         }
 
