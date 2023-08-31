@@ -7,6 +7,8 @@ public class PlayerAttackingState : PlayerBaseState
 {
     private AttackData attack;
 
+    private bool appliedForceAlaready;
+
     private float previousFrameTime;
     public PlayerAttackingState(PlayerStateMachine stateMachine, int attackIndex) : base(stateMachine)
     {
@@ -27,7 +29,13 @@ public class PlayerAttackingState : PlayerBaseState
         float normalizedTime = GetNormalizedTime();
 
 
-        if (normalizedTime > previousFrameTime && normalizedTime < 1)
+        if(normalizedTime >= attack.ForceTime)
+        {
+            TryApplyForce();
+
+        }
+
+        if (normalizedTime > previousFrameTime && normalizedTime < 1f)
         {
             if(stateMachine.InputReceiver.IsAttacking)              // Check if the player is still attacking
             {
@@ -58,10 +66,24 @@ public class PlayerAttackingState : PlayerBaseState
         if(normalizedTime < attack.ComboAttackTime) { return; }     //  If we're not ready to combo attack return
 
         stateMachine.SwitchState(new PlayerAttackingState(stateMachine, attack.ComboStateIndex));
+    }
 
+    private void TryApplyForce()
+    {
+        #region Comments
 
+        // We call this in the tick method when the time has passed force time, meaning
+        // when we are far enough trough the animation to apply the force
+        #endregion
+
+        if(appliedForceAlaready) { return; }
+
+        stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * attack.Force);
+
+        appliedForceAlaready = true;
 
     }
+
 
     private float GetNormalizedTime()
     {
@@ -82,7 +104,7 @@ public class PlayerAttackingState : PlayerBaseState
         else
         {
             return 0f;
-        }
+        } 
     }
 
 }

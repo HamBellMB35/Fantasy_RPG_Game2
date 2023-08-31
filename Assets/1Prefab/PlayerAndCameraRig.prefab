@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Follow: {fileID: 6968443717775497256}
   m_CommonLens: 1
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 34.79
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_YAxis:
     Value: 0.5
     m_SpeedMode: 0
-    m_MaxSpeed: 0.25
+    m_MaxSpeed: 0.18
     m_AccelTime: 0.2
     m_DecelTime: 0.1
     m_InputAxisName: 
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 150
+    m_MaxSpeed: 125
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: 
