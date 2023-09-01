@@ -21,7 +21,7 @@ public class PlayerAttackingState : PlayerBaseState
         attack = stateMachine.Attacks[attackIndex];
         // **************** THIS IS JUST TEMPORARY
         // MUST PLACE IN CORRECT SPOT ALTHOUGH WORKING WELL FOR NOW///
-        RandomizeAttacks(stateMachine.Attacks);
+       // RandomizeAttacks(stateMachine.Attacks);
     }
 
     public override void Enter()
@@ -46,7 +46,7 @@ public class PlayerAttackingState : PlayerBaseState
 
         }
 
-        if (normalizedTime > previousFrameTime && normalizedTime < 1f)
+        if ( normalizedTime < 1f)
         {
             if(stateMachine.InputReceiver.IsAttacking)              // Check if the player is still attacking
             {
@@ -58,8 +58,19 @@ public class PlayerAttackingState : PlayerBaseState
 
         else
         {
-            Debug.Log("were back to locomorion");
-            // go back to locomotion
+            #region Comments
+            // If the player has a target we go back to the taret state, else we go back to free look
+            #endregion
+
+            if(stateMachine.Targeter.CurrentTarget != null)
+            {
+                stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+            }
+
+            else
+            {
+                stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+            }
         }
 
         previousFrameTime = normalizedTime;
@@ -69,7 +80,7 @@ public class PlayerAttackingState : PlayerBaseState
 
     public override void Exit()
     {
-
+       
     }
 
 
@@ -123,9 +134,5 @@ public class PlayerAttackingState : PlayerBaseState
         } 
 
     }
-
-
-  
-
 
 }
