@@ -18,10 +18,10 @@ public class PlayerAttackingState : PlayerBaseState
     private float previousFrameTime;
     public PlayerAttackingState(PlayerStateMachine stateMachine, int attackIndex) : base(stateMachine)
     {
-        attack = stateMachine.Attacks[attackIndex];
+        attack = stateMachine.SwordAttacks[attackIndex];
         // **************** THIS IS JUST TEMPORARY
         // MUST PLACE IN CORRECT SPOT ALTHOUGH WORKING WELL FOR NOW///
-       // RandomizeAttacks(stateMachine.Attacks);
+       // RandomizeAttacks(stateMachine.SwordAttacks);
     }
 
     public override void Enter()

@@ -20,7 +20,7 @@ public abstract class PlayerBaseState : State
     public PlayerBaseState(PlayerStateMachine stateMachine)
     {
         this.stateMachine = stateMachine;
-        swordAttackList = stateMachine.Attacks;
+        swordAttackList = stateMachine.SwordAttacks;
         attackListLength = swordAttackList.Length;
     }
 

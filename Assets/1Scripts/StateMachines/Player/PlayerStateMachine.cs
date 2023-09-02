@@ -13,7 +13,9 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float FreeLookMovementSpeed { get; private set; }
     [field: SerializeField] public float TargetingMovementSpeed { get; private set; }
     [field: SerializeField] public float RotationSmoothingValue { get; private set; }
-    [field: SerializeField] public AttackData[] Attacks { get; set; }
+    [field: SerializeField] public AttackData[] SwordAttacks { get; set; }
+    [field: SerializeField] public AttackData[] FistAttacks { get; set; }
+    [field: SerializeField] public AttackData[] MagicAttacks { get; set; }
     public Transform MainCameraTransform { get; private set; }
 
     private void Start()

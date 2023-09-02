@@ -1425,25 +1425,27 @@ MonoBehaviour:
   <FreeLookMovementSpeed>k__BackingField: 6
   <TargetingMovementSpeed>k__BackingField: 5
   <RotationSmoothingValue>k__BackingField: 9
-  <Attacks>k__BackingField:
+  <SwordAttacks>k__BackingField:
   - <AnimationName>k__BackingField: MeleeAttack1
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 1
     <ComboAttackTime>k__BackingField: 0.6
-    <Force>k__BackingField: -10
-    <ForceTime>k__BackingField: 0.35
+    <Force>k__BackingField: 0.35
+    <ForceTime>k__BackingField: 15
   - <AnimationName>k__BackingField: MeleeAttack2
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0.5
-    <Force>k__BackingField: -10
-    <ForceTime>k__BackingField: 0.35
+    <Force>k__BackingField: 0.35
+    <ForceTime>k__BackingField: 15
   - <AnimationName>k__BackingField: MeleeAttack3
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: -1
     <ComboAttackTime>k__BackingField: 0
-    <Force>k__BackingField: -15
-    <ForceTime>k__BackingField: 0.35
+    <Force>k__BackingField: 0.35
+    <ForceTime>k__BackingField: 20
+  <FistAttacks>k__BackingField: []
+  <MagicAttacks>k__BackingField: []
 --- !u!114 &3496178535193008413
 MonoBehaviour:
   m_ObjectHideFlags: 0
