@@ -29052,7 +29052,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596607319}
-  m_LocalRotation: {x: 0.025890129, y: 0.054006357, z: -0.0014007473, w: 0.99820393}
+  m_LocalRotation: {x: 0.025890129, y: 0.054006428, z: -0.0014007491, w: 0.99820393}
   m_LocalPosition: {x: -0.7089919, y: -3.0649998, z: -22.6848}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -37749,84 +37749,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[0].<Force>k__BackingField
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[1].<Force>k__BackingField
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[2].<Force>k__BackingField
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[0].<ForceTime>k__BackingField
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[1].<ForceTime>k__BackingField
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[2].<ForceTime>k__BackingField
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[2].<ComboStateIndex>k__BackingField
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[2].<TransitionDuration>k__BackingField
       value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[0].<AnimationName>k__BackingField
-      value: MeleeAttack1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[1].<AnimationName>k__BackingField
-      value: MeleeAttack2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[2].<AnimationName>k__BackingField
-      value: MeleeAttack3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[0].<ComboAttackTime>k__BackingField
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[0].<ComboStateIndex>k__BackingField
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[1].<ComboAttackTime>k__BackingField
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[1].<ComboStateIndex>k__BackingField
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[2].<ComboStateIndex>k__BackingField
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[0].<TransitionDuration>k__BackingField
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[1].<TransitionDuration>k__BackingField
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1704546010201019325, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
-      propertyPath: <SwordAttacks>k__BackingField.Array.data[2].<TransitionDuration>k__BackingField
-      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2028350697068964282, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_MaximumFOV
@@ -37906,15 +37834,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5572050382630378772, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.025890134
+      value: 0.025890132
       objectReference: {fileID: 0}
     - target: {fileID: 5572050382630378772, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.054006375
+      value: 0.054006413
       objectReference: {fileID: 0}
     - target: {fileID: 5572050382630378772, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.001400748
+      value: -0.0014007488
       objectReference: {fileID: 0}
     - target: {fileID: 5572050382630378779, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_Lens.FieldOfView
@@ -38074,15 +38002,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5572050384282869521, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.029003732
+      value: 0.02900373
       objectReference: {fileID: 0}
     - target: {fileID: 5572050384282869521, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.054001775
+      value: 0.05400174
       objectReference: {fileID: 0}
     - target: {fileID: 5572050384282869521, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0015692059
+      value: -0.0015692047
       objectReference: {fileID: 0}
     - target: {fileID: 5572050384357970376, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_SoftZoneWidth
@@ -38142,15 +38070,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7290700377214078525, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.1053507
+      value: 0.105350696
       objectReference: {fileID: 0}
     - target: {fileID: 7290700377214078525, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000042776573
+      value: 0.0000000042776573
       objectReference: {fileID: 0}
     - target: {fileID: 7290700377214078525, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 4.531761e-10
+      value: -4.5317608e-10
       objectReference: {fileID: 0}
     - target: {fileID: 8105645772684911753, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38170,11 +38098,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8463351314552034235, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.000000060222334
+      value: -0.000000060222334
       objectReference: {fileID: 0}
     - target: {fileID: 8463351314552034235, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0000015497208
+      value: -0.00000166893
       objectReference: {fileID: 0}
     - target: {fileID: 8463351314552034235, guid: 146a991134e662e4697cf356c93c8e8e, type: 3}
       propertyPath: m_LocalPosition.z

@@ -15,6 +15,7 @@ public class InputReceiver : MonoBehaviour, Controls.IPlayerActions
     public event Action TargetEvent;
     public event Action CancelTargetEvent;
 
+
     private Controls controls;
 
     private void Start()
@@ -53,7 +54,7 @@ public class InputReceiver : MonoBehaviour, Controls.IPlayerActions
     {
         // Remember to leave empty for now.
         // Cinemachine component is using this automatically. 
-        
+
     }
 
     public void OnTarget(InputAction.CallbackContext context)
@@ -70,12 +71,32 @@ public class InputReceiver : MonoBehaviour, Controls.IPlayerActions
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if(context.performed) { IsAttacking = true; }               // May need to add more codition for magic
-                                                                    // or melee attacks here
+        if (context.performed) { IsAttacking = true; }               // May need to add more codition for magic
+                                                                     // or melee attacks here
 
-        else if(context.canceled) { IsAttacking = false; }
+        else if (context.canceled) { IsAttacking = false; }
 
-        
+
+    }
+
+    public void OnLight(InputAction.CallbackContext context)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnSlectSword(InputAction.CallbackContext context)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnSlectFists(InputAction.CallbackContext context)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnSlectMagic(InputAction.CallbackContext context)
+    {
+        throw new NotImplementedException();
     }
 }
 

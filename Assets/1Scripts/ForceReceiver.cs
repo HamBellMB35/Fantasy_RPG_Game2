@@ -7,7 +7,7 @@ public class ForceReceiver : MonoBehaviour
 {
     [SerializeField] private CharacterController controller;
 
-    [SerializeField] private float entityDrag = 0.3f;
+    [SerializeField] private float entityDrag = 0.1f;
     
     public float verticalVelocity;
 
@@ -19,7 +19,7 @@ public class ForceReceiver : MonoBehaviour
     // This will always be happening regardless of what state 
     // were in so that gravity doesnt reset everytime we switch states
     #endregion
-    public Vector3 Movement => (Vector3.up + impact) * verticalVelocity;
+    public Vector3 Movement => impact + Vector3.up * verticalVelocity;
     private void Update()
     {
         if( verticalVelocity < 0f && controller.isGrounded)

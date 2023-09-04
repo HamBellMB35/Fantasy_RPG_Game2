@@ -1,34 +1,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttackingState : PlayerBaseState
 {
-    private AttackData attack;
-    
-    private bool appliedForceAlaready;
-
-   
-
-
-   
-
-
     private float previousFrameTime;
+    private bool alreadyAppliedForce;
+
+    private AttackData attack;
+
     public PlayerAttackingState(PlayerStateMachine stateMachine, int attackIndex) : base(stateMachine)
     {
         attack = stateMachine.SwordAttacks[attackIndex];
-        // **************** THIS IS JUST TEMPORARY
-        // MUST PLACE IN CORRECT SPOT ALTHOUGH WORKING WELL FOR NOW///
-       // RandomizeAttacks(stateMachine.SwordAttacks);
     }
 
     public override void Enter()
     {
         stateMachine.Animator.CrossFadeInFixedTime(attack.AnimationName, attack.TransitionDuration);
-
-       
     }
 
     public override void Tick(float deltaTime)
@@ -39,34 +29,27 @@ public class PlayerAttackingState : PlayerBaseState
 
         float normalizedTime = GetNormalizedTime();
 
-
-        if(normalizedTime >= attack.ForceTime)
-        {
-            TryApplyForce();
-
-        }
-
         if ( normalizedTime < 1f)
         {
-            if(stateMachine.InputReceiver.IsAttacking)              // Check if the player is still attacking
-            {
-                TryComboAttack(normalizedTime);
+            Debug.Log("normalizedTime time is Less than 1");
 
+            if (normalizedTime >= attack.ForceTime)
+            {
+                TryApplyForce();
+                Debug.Log("Im trying to apply forceeeeeeeeeeeeeee");
             }
 
+            if (stateMachine.InputReceiver.IsAttacking)
+            {
+                TryComboAttack(normalizedTime);
+            }
         }
-
         else
         {
-            #region Comments
-            // If the player has a target we go back to the taret state, else we go back to free look
-            #endregion
-
-            if(stateMachine.Targeter.CurrentTarget != null)
+            if (stateMachine.Targeter.CurrentTarget != null)
             {
                 stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
             }
-
             else
             {
                 stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
@@ -74,65 +57,50 @@ public class PlayerAttackingState : PlayerBaseState
         }
 
         previousFrameTime = normalizedTime;
-
     }
-
 
     public override void Exit()
     {
-       
-    }
 
+    }
 
     private void TryComboAttack(float normalizedTime)
     {
-        if (attack.ComboStateIndex == -1) { return; }        // If we cant combo retun
+        if (attack.ComboStateIndex == -1) { return; }
 
-        if (normalizedTime < attack.ComboAttackTime) { return; }     //  If we're not ready to combo attack return
+        if (normalizedTime < attack.ComboAttackTime) { return; }
 
-        stateMachine.SwitchState(new PlayerAttackingState(stateMachine, attack.ComboStateIndex));
-
-        
+        stateMachine.SwitchState(new PlayerAttackingState(stateMachine,attack.ComboStateIndex));
     }
 
     private void TryApplyForce()
     {
-        #region Comments
-
-        // We call this in the tick method when the time has passed force time, meaning
-        // when we are far enough trough the animation to apply the force
-        #endregion
-
-        if(appliedForceAlaready) { return; }
+        if (alreadyAppliedForce) { return; }
 
         stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * attack.Force);
 
-        appliedForceAlaready = true;
-
+        alreadyAppliedForce = true;
     }
-
 
     private float GetNormalizedTime()
     {
         AnimatorStateInfo currentInfo = stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
         AnimatorStateInfo nextInfo = stateMachine.Animator.GetNextAnimatorStateInfo(0);
 
-        if(stateMachine.Animator.IsInTransition(0) && nextInfo.IsTag("MeleeAttack"))
+        if (stateMachine.Animator.IsInTransition(0) && nextInfo.IsTag("MeleeAttack"))
         {
             return nextInfo.normalizedTime;
         }
-
-        else if(!stateMachine.Animator.IsInTransition(0) && currentInfo.IsTag("MeleeAttack"))
+        else if (!stateMachine.Animator.IsInTransition(0) && currentInfo.IsTag("MeleeAttack"))
         {
-
             return currentInfo.normalizedTime;
         }
-
         else
         {
             return 0f;
-        } 
-
+        }
     }
+
+
 
 }

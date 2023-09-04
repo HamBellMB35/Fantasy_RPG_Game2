@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Xml.Linq;
 using UnityEngine;
 
 public abstract class PlayerBaseState : State
@@ -10,18 +8,11 @@ public abstract class PlayerBaseState : State
 #endregion
 {
     protected PlayerStateMachine stateMachine;
-
-    private AttackData[] swordAttackList;
-
-    private int attackListLength;
-
-    private static System.Random _random = new System.Random();
-
+ 
     public PlayerBaseState(PlayerStateMachine stateMachine)
     {
         this.stateMachine = stateMachine;
-        swordAttackList = stateMachine.SwordAttacks;
-        attackListLength = swordAttackList.Length;
+
     }
 
     protected void Move( Vector3 motion, float deltaTime)
@@ -55,26 +46,5 @@ public abstract class PlayerBaseState : State
         stateMachine.transform.rotation = Quaternion.LookRotation(lookAtPos);
 
     }
-    /// <summary>
-    /// ********************FIX THIS*************
-    /// </summary>
-    /// <param name="attackDataArray"></param>
-    public void RandomizeAttacks(AttackData[] attackDataArray) // Maybe move to playerbaseState 
-    {
-        int lastIndex = attackDataArray.Length - 1;
-
-        for (int currentAttackIndex = attackListLength - 2; currentAttackIndex > 0; currentAttackIndex--)
-        {
-            int randomIndex = _random.Next(0, currentAttackIndex + 1);
-
-            int temp = attackDataArray[randomIndex].ComboStateIndex;
-
-            attackDataArray[randomIndex].ComboStateIndex = attackDataArray[currentAttackIndex].ComboStateIndex;
-
-            attackDataArray[currentAttackIndex].ComboStateIndex = temp;
-        }
-
-        attackDataArray[lastIndex].ComboStateIndex = -1;
-    }
-
+   
 }
