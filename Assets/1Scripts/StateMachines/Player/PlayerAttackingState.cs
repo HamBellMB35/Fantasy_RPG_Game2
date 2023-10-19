@@ -33,7 +33,7 @@ public class PlayerAttackingState : PlayerBaseState
         {
             Debug.Log("normalizedTime time is Less than 1");
 
-            if (normalizedTime >= attack.ForceTime)
+            if (normalizedTime >= attack.ForceTime) // We try to apply force when the time has passed the ForceTime                                           So when we are far enough into the animation to apply the force
             {
                 TryApplyForce();
                 Debug.Log("Im trying to apply forceeeeeeeeeeeeeee");
