@@ -69,9 +69,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Light",
+                    "name": "MagicLight",
                     "type": "Button",
-                    "id": "769f021a-ea0b-407d-b076-3425406aaa24",
+                    "id": "e2bb66ea-0511-4d37-9265-32ab33259f81",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -279,12 +279,12 @@
                 },
                 {
                     "name": "",
-                    "id": "7d26baaf-dd37-4056-87de-ede25d59a00d",
-                    "path": "<Keyboard>/4",
+                    "id": "122dde50-336e-49ad-9433-cbf2630e0331",
+                    "path": "<Keyboard>/5",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
-                    "action": "Light",
+                    "action": "MagicLight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

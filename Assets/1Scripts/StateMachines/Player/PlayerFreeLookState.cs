@@ -7,14 +7,19 @@ public class PlayerFreeLookState : PlayerBaseState
     private readonly int FreeLookBlendTreeHash = Animator.StringToHash("FreeLookBlendTree");
 
     private readonly int FreeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
-
+    private readonly int LightCastHash = Animator.StringToHash("LightCast");
+    private bool lightOff;
     private const float AnimatorDampTime = 0.1f;
+
+    
 
     public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
         stateMachine.InputReceiver.TargetEvent += OnTarget;
+        stateMachine.InputReceiver.MagicLightEvent += OnMagicLight;
+
         stateMachine.Animator.Play(FreeLookBlendTreeHash);
     }
 
@@ -44,6 +49,7 @@ public class PlayerFreeLookState : PlayerBaseState
     public override void Exit()
     {
         stateMachine.InputReceiver.TargetEvent -= OnTarget;
+        stateMachine.InputReceiver.MagicLightEvent -= OnMagicLight;
 
 
     }
@@ -91,6 +97,13 @@ public class PlayerFreeLookState : PlayerBaseState
         if (!stateMachine.Targeter.SelectTarget()) { return; } 
 
         stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+    }
+
+    private void OnMagicLight()
+    {
+
+        Debug.Log("PLAY LIGHT ANIMATION HERE");
+
     }
 
 

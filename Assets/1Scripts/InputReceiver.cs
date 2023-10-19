@@ -9,11 +9,13 @@ public class InputReceiver : MonoBehaviour, Controls.IPlayerActions
     public Vector2 MovementValue { get; private set; }
 
     public bool IsAttacking { get; private set; }
+    public bool IsLightOn { get; private set; }
 
     public event Action JumpEvent;
     public event Action DodgeEvent;
     public event Action TargetEvent;
     public event Action CancelTargetEvent;
+    public event Action MagicLightEvent;
 
 
     private Controls controls;
@@ -79,24 +81,17 @@ public class InputReceiver : MonoBehaviour, Controls.IPlayerActions
 
     }
 
-    public void OnLight(InputAction.CallbackContext context)
+    public void OnMagicLight(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
-    }
+        Debug.Log("I AM Tpressing 5");
+        if (!context.performed) { return; }
 
-    public void OnSlectSword(InputAction.CallbackContext context)
-    {
-        throw new NotImplementedException();
-    }
+        
+        
 
-    public void OnSlectFists(InputAction.CallbackContext context)
-    {
-        throw new NotImplementedException();
-    }
+        MagicLightEvent?.Invoke();
 
-    public void OnSlectMagic(InputAction.CallbackContext context)
-    {
-        throw new NotImplementedException();
+         if (context.canceled) { return; }
     }
 }
 

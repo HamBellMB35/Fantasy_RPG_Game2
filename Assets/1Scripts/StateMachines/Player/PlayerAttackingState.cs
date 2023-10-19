@@ -66,11 +66,12 @@ public class PlayerAttackingState : PlayerBaseState
 
     private void TryComboAttack(float normalizedTime)
     {
-        if (attack.ComboStateIndex == -1) { return; }
+        if (attack.ComboStateIndex == -1) { return; } //To make sure it can combo,if we dont have a combo then return
 
-        if (normalizedTime < attack.ComboAttackTime) { return; }
+        if (normalizedTime < attack.ComboAttackTime) { return; } // Not ready to combo attack then we return
 
-        stateMachine.SwitchState(new PlayerAttackingState(stateMachine,attack.ComboStateIndex));
+        stateMachine.SwitchState(new PlayerAttackingState
+            (stateMachine,attack.ComboStateIndex)); // We switch state to the current attack
     }
 
     private void TryApplyForce()

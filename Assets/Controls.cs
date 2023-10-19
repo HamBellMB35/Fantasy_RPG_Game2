@@ -91,9 +91,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Light"",
+                    ""name"": ""MagicLight"",
                     ""type"": ""Button"",
-                    ""id"": ""769f021a-ea0b-407d-b076-3425406aaa24"",
+                    ""id"": ""e2bb66ea-0511-4d37-9265-32ab33259f81"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -301,12 +301,12 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7d26baaf-dd37-4056-87de-ede25d59a00d"",
-                    ""path"": ""<Keyboard>/4"",
+                    ""id"": ""122dde50-336e-49ad-9433-cbf2630e0331"",
+                    ""path"": ""<Keyboard>/5"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Light"",
+                    ""action"": ""MagicLight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -352,7 +352,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Player_Target = m_Player.FindAction("Target", throwIfNotFound: true);
         m_Player_Cancel = m_Player.FindAction("Cancel", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
-        m_Player_Light = m_Player.FindAction("Light", throwIfNotFound: true);
+        m_Player_MagicLight = m_Player.FindAction("MagicLight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -419,7 +419,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Target;
     private readonly InputAction m_Player_Cancel;
     private readonly InputAction m_Player_Attack;
-    private readonly InputAction m_Player_Light;
+    private readonly InputAction m_Player_MagicLight;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -431,7 +431,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @Target => m_Wrapper.m_Player_Target;
         public InputAction @Cancel => m_Wrapper.m_Player_Cancel;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
-        public InputAction @Light => m_Wrapper.m_Player_Light;
+        public InputAction @MagicLight => m_Wrapper.m_Player_MagicLight;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -462,9 +462,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Attack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
                 @Attack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
                 @Attack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
-                @Light.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLight;
-                @Light.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLight;
-                @Light.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLight;
+                @MagicLight.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMagicLight;
+                @MagicLight.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMagicLight;
+                @MagicLight.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMagicLight;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -490,9 +490,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
-                @Light.started += instance.OnLight;
-                @Light.performed += instance.OnLight;
-                @Light.canceled += instance.OnLight;
+                @MagicLight.started += instance.OnMagicLight;
+                @MagicLight.performed += instance.OnMagicLight;
+                @MagicLight.canceled += instance.OnMagicLight;
             }
         }
     }
@@ -524,6 +524,6 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnTarget(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
-        void OnLight(InputAction.CallbackContext context);
+        void OnMagicLight(InputAction.CallbackContext context);
     }
 }

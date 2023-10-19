@@ -17,6 +17,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public AttackData[] SwordAttacks { get; private set; }
     [field: SerializeField] public AttackData[] FistAttacks { get; private set; }
     [field: SerializeField] public AttackData[] MagicAttacks { get; private set; }
+  
     public Transform MainCameraTransform { get; private set; }
 
     private void Start()

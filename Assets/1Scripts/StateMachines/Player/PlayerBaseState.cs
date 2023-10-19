@@ -46,5 +46,10 @@ public abstract class PlayerBaseState : State
         stateMachine.transform.rotation = Quaternion.LookRotation(lookAtPos);
 
     }
+
+    protected void SpawnMagicLIght()
+    {
+        Debug.Log("A magical light has spawned!");
+    }
    
 }
